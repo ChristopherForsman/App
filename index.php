@@ -1,7 +1,7 @@
 <?php
-	session_start();
-	$title = "Welcome";
-	include "includes/head.php"
+session_start();
+$title = "Welcome";
+include "includes/head.php"
 ?>
 
 <?php if ($_SESSION['username']) : ?>
