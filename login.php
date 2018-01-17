@@ -22,6 +22,8 @@
 			$db_password = $row['password'];
 		}
 		
+		$password = crypt($password, $db_password);
+		
 		if ($username === $db_username && $password === $db_password) {
 			$_SESSION['username'] = $db_username;
 			header("Location: index.php");

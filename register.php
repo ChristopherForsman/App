@@ -6,28 +6,23 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
+		//Int minns ja va e hejt, men de här e he de som stoppar ejn att skriv kommandon i inloggningsfälten.l
 		$username = mysqli_real_escape_string($connection, $username);
 		$password = mysqli_real_escape_string($connection, $password);
 		
-		$query = "SELECT * FROM users WHERE username = '{$username}' ";
-		$select_user_query = mysqli_query($connection, $query);
+		//kryptering åv lösenord
+		$hashFormat = "$2y$10$";
+		$salt = "RenaultAndPeugeotIsGay";
+		$hash_and_salt = $hashFormat . $salt;
+		$password = crypt($password, $hash_and_salt);
 		
-		if (!$select_user_query) {
-			die('Query failed') . mysqli_error($connection);
-		}
+		$query = "INSERT INTO users(username, password)";
+		$query .= "VALUES ('$username', '$password')";
 		
-		while($row = mysqli_fetch_array($select_user_query)) {
-			$db_id = $row['id'];
-			$db_username = $row['username'];
-			$db_password = $row['password'];
-		}
+		$result = mysqli_query($connection, $query);
 		
-		if ($username === $db_username && $password === $db_password) {
-			$_SESSION['username'] = $db_username;
-			header("Location: index.php");
-		}
-		else {
-			header("Location: login.php");
+		if (!$result) {
+			die("Han är död, Jim!");
 		}
 	}
 	
