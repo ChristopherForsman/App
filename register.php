@@ -2,7 +2,7 @@
 	include 'includes/db.php';
 	session_start();
 	
-	if (isset($_POST['login'])) {
+	if (isset($_POST['register'])) {
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
@@ -31,17 +31,17 @@
 		}
 	}
 	
-	$title = 'Login';
+	$title = 'register';
 	include "includes/head.php";
 	
 ?>
 
-	<form class="login animated fadeInDown" action="login.php" method="post">
-		<h3>Login</h3>
+	<form class="login animated fadeInDown" action="register.php" method="post">
+		<h3>Register</h3>
 		<input type="text" name="username" placeholder="Username" required autofocus>
 		<input type="password" name="password" placeholder="Password" required>
-		<input type="submit" name="login" value="Login">
-		<a href="register.php">New user? Sign up here</a>
+		<input type="submit" name="register" value="Register">
+		<a href="login.php">Already a user? Login here</a>
 	</form>
 </body>
 </html>
