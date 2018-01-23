@@ -1,6 +1,12 @@
 <?php
-	include 'includes/db.php';
 	session_start();
+	$title = 'Login';
+	$bodyID = "login";
+	include "includes/head.php";
+	
+	$db_username = ' ';
+	$db_password = ' ';
+	$errorMessage = ' ';
 	
 	if (isset($_POST['login'])) {
 		$username = $_POST['username'];
@@ -25,16 +31,18 @@
 		$password = crypt($password, $db_password);
 		
 		if ($username === $db_username && $password === $db_password) {
+			$_SESSION['id'] = $db_id;
 			$_SESSION['username'] = $db_username;
 			header("Location: index.php");
 		}
 		else {
-			header("Location: login.php");
+//			$db_username = ' '; 
+//			$db_password = ' ';
+			$errorMessage = "Wrong username or password!";
 		}
 	}
 	
-	$title = 'Login';
-	include "includes/head.php";
+
 	
 ?>
 
@@ -45,5 +53,10 @@
 		<input type="submit" name="login" value="Login">
 		<a href="register.php">New user? Sign up here</a>
 	</form>
+		<?php if ($errorMessage) : ?>
+		<div id="alert">
+		<?php echo $errorMessage; ?>
+		</div>
+		<?php endif; ?>
 </body>
 </html>

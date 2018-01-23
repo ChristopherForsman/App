@@ -2,18 +2,31 @@
 	box-siziing: border-box;
 }
 html {
-	background: #076585;
-	background: linear-gradient(to bottom, #076585, #fff);
-	background: -webkit-linear-gradient(to bottom, #076585, #fff);
+
 }
 html, body {
 	height: 100%;
 }
 body {
 	margin: 0;
+}
+#login, #register {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	background: #076585;
+	background: linear-gradient(to bottom, #076585, #fff);
+	background: -webkit-linear-gradient(to bottom, #076585, #fff);
+}
+#index {
+	background: black;
+/*	background: #4c4c4c;
+	background: -moz-linear-gradient(-45deg, #4c4c4c 0%, #000000 100%, #0e0e0e 100%); 
+	background: -webkit-linear-gradient(-45deg, #4c4c4c 0%,#000000 100%,#0e0e0e 100%); 
+	background: linear-gradient(135deg, #4c4c4c 0%,#000000 100%,#0e0e0e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#0e0e0e',GradientType=1 ); 
+*/
 }
 .login {
 	background: #ecf0f1;
@@ -49,4 +62,84 @@ body {
 }
 a {
 
+}
+#alert {
+	background: #e74c3c;
+	border-radius: 4px;
+	color: #fff;
+	line-height: 50px;
+	margin: 15px auto 0;
+	text-align: center;
+	width: 320px;
+}
+
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+	width: 100%;
+	border-bottom: 2px solid lime;
+	border-top: 2px solid lime;
+}
+
+.li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: lime;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.welcome {
+	background: black;
+	display: block;
+    color: lime;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	width: 444px;
+	margin: auto;
+	margin-top: 100px;
+	border: 2px solid lime;
+
+}
+.logout {
+	float: right;
+}
+section {
+	background: black;
+	padding: 20px;
+	width: 555px;
+	margin: 100px auto 0;
+	border: 2px solid lime;
+}
+section h2 {
+	margin: 0 auto;
+	text-align: center;
+	color: aqua;
+}
+.class {
+	color: aqua;
+}
+.knapp {
+width: 100%;
+border-radius: 10px;
+background: red;
+border: 2px solid black;
+color: aqua;
+}
+.text {
+width: 99%;
+border-radius: 10px;
+background: yellow;
+border: 2px solid black;
 }
