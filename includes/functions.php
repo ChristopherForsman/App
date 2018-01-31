@@ -1,4 +1,7 @@
 <?php
+
+	$appName = "To-Do";
+
 	function check_if_this_specific_username_already_exists_in_the_database($username) {
 		global $connection;
 		
