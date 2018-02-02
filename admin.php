@@ -48,7 +48,7 @@ if (isset($_POST['addTask'])) {
 			
 			<?php endwhile; ?>
 		</ul>
-		<form action="index.php" method="post">
+		<form action="admin.php" method="post">
 			<input class="text" type="text" name="taskName" placeholder="Write something personal or secret or illegal to your personal and secret to-do list!">
 			<input class="knapp" type="submit" name="addTask" value="Click HERE to add you personal or secret or illegal text to your personal and secret to-do list">
 		</form>

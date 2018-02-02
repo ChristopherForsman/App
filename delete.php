@@ -9,7 +9,7 @@
 		$taskID = $_POST['taskID'];
 		$query = "DELETE FROM tasks WHERE id = $taskID";
 		$deleteTaskQuery = mysqli_query($connection, $query);
-		header("Location: index.php");
+		header("Location: admin.php");
 	}
 ?>
 
@@ -17,7 +17,7 @@
 	<input type="hidden" name="taskID" value="<?php echo $taskID; ?>">
 	<h2>Are you sure?</h2>
 	<input type="submit" name="deleteTask" value="Yes">
-	<a href="index.php">No</a>
+	<a href="admin.php">No</a>
 </form>
 
 </body>

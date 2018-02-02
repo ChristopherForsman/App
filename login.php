@@ -45,18 +45,19 @@
 
 	
 ?>
-
-	<form class="login animated fadeInDown" action="login.php" method="post">
-		<h3>Login</h3>
-		<input type="text" name="username" placeholder="Username" required autofocus>
-		<input type="password" name="password" placeholder="Password" required>
-		<input type="submit" name="login" value="Login">
-		<a href="register.php">New user? Sign up here</a>
-	</form>
+	<div class="BOX1">
+		<form class="login animated fadeInDown" action="login.php" method="post">
+			<h3>Login</h3>
+			<input type="text" name="username" placeholder="Username" required autofocus>
+			<input type="password" name="password" placeholder="Password" required>
+			<input type="submit" name="login" value="Login">
+			<a href="register.php">New user? Sign up here</a>
+		</form>
 		<?php if ($errorMessage) : ?>
 		<div id="alert">
 		<?php echo $errorMessage; ?>
 		</div>
 		<?php endif; ?>
+	</div>
 </body>
 </html>
