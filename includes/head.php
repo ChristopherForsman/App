@@ -27,4 +27,8 @@
 
 <title><?php echo $title . " &raquo; " . $appName; ?></title>
 </head>
+<?php if (isset($bodyClass)) : ?>
+<body class="<?php echo $bodyClass;?>">
+<?php else: ?>
 <body>
+<?php endif; ?>
