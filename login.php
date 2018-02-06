@@ -54,9 +54,9 @@
 			<a href="register.php">New user? Sign up here</a>
 		</form>
 		<?php if ($errorMessage) : ?>
-		<div id="alert">
+		<!-- <div id="alert">
 		<?php echo $errorMessage; ?>
-		</div>
+		</div> -->
 		<?php endif; ?>
 	</div>
 </body>

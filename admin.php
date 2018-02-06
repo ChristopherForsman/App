@@ -16,7 +16,11 @@ if (isset($_POST['addTask'])) {
 
 <?php if (isset($_SESSION['username'])) : ?>
 	 <ul class="ul">
-		<li class="li"><a href="default.asp">Home</a></li>
+		<li class="li">
+			<a href="/">
+				<img class=" knappBild" src="img/TO-DO-LOGO.svg" alt="TO-DO">
+				Home
+			</a></li>
 		<li class="li"><a href="news.asp">News</a></li>
 		<li class="li"><a href="contact.asp">Contact</a></li>
 		<li class="li"><a href="about.asp">About</a></li>
@@ -25,37 +29,15 @@ if (isset($_POST['addTask'])) {
 	<div class="welcome">
 	<h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
 	</div>
-	<section>
-		<h2>
-			Your personal and secret to do list
-		</h2>
-		<ul>
-			<?php
-				$query = "SELECT * FROM tasks WHERE user_id = {$_SESSION['id']} " ;
-				$result = mysqli_query($connection, $query);
-				
-				//while ($row = mysqli_fetch_array($result)) {
-				//echo "<li class='class'>" . $row['title'] . "</li>";
-				// }
-				while($row = mysqli_fetch_array($result)) :
-			?>
-			
-				<li class='class'>
-					<?php echo $row['title']; ?>
-					<a class="delete" href="delete.php?taskID=<?php echo $row['id']; ?>">Delete</a>
-					<a class="edit" href="edit.php?taskID=<?php echo $row['id']; ?>">Edit</a>
-				</li>
-			
-			<?php endwhile; ?>
-		</ul>
-		<form action="admin.php" method="post">
-			<input class="text" type="text" name="taskName" placeholder="Write something personal or secret or illegal to your personal and secret to-do list!">
-			<input class="knapp" type="submit" name="addTask" value="Click HERE to add you personal or secret or illegal text to your personal and secret to-do list">
-		</form>
-	</section>	
+
+	<div class="container-fluid">
+		<div class="row">
+			<?php include "includes/tasks.php"; ?>
+		</div>	
+	</div>
+	
 <?php else : ?>
 	<h1>ACCESS DENIED</H1>
 <?php endif; ?>
-	
-</body>
-</html>
+
+<?php include "includes/footer.php"; ?>

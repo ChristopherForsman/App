@@ -18,7 +18,7 @@
 		
 			//kryptering åv lösenord
 			$hashFormat = "$2y$10$";
-			$salt = "RenaultAndPeugeotIsGay";
+			$salt = "ThisTextIsCrap";
 			$hash_and_salt = $hashFormat . $salt;
 			$password = crypt($password, $hash_and_salt);
 
@@ -41,13 +41,14 @@
 	
 	
 ?>
-
-	<form class="login animated fadeInDown" action="register.php" method="post">
-		<h3>Register</h3>
-		<input type="text" name="username" placeholder="Username" required autofocus>
-		<input type="password" name="password" placeholder="Password" required>
-		<input type="submit" name="register" value="Register">
-		<a href="login.php">Already a user? Login here</a>
-	</form>
+	<div class="BOX1">
+		<form class="login animated fadeInDown" action="register.php" method="post">
+			<h3>Register</h3>
+			<input type="text" name="username" placeholder="Username" required autofocus>
+			<input type="password" name="password" placeholder="Password" required>
+			<input type="submit" name="register" value="Register">
+			<a href="login.php">Already a user? Login here</a>
+		</form>
+	</div>
 </body>
 </html>
