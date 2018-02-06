@@ -10,11 +10,20 @@ if (isset($_POST['addTask'])) {
 
 
 
-
-
 ?>
 
-<?php if (isset($_SESSION['username'])) : ?>
+<?php if (isset($_SESSION['username'])) : 
+
+$uname =  $_SESSION['username'];
+if (strlen($uname) > 0) {
+	if ($uname[strlen($uname) - 1] !== 's') {
+		$uname .= "'s";
+	} else {
+		$uname .= "'";
+	}
+}
+
+?>
 	 <ul class="ul">
 		<li class="li">
 			<a href="/">
@@ -27,7 +36,7 @@ if (isset($_POST['addTask'])) {
 		<li class="logout"><a href="logout.php">Logout <?php echo $_SESSION['username']; ?></a>
 	</ul> 
 	<div class="welcome">
-	<h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
+	<h1>Welcome to <?php echo $uname; ?> to-do list</h1>
 	</div>
 
 	<div class="container-fluid">

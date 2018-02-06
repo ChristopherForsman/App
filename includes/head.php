@@ -2,7 +2,7 @@
 	include "db.php";
 	include 'functions.php';
 	
-	$title = "Wellcome";
+	$title = "Welcome";
 ?>
 <!doctype html>
 <html lang="sv">
